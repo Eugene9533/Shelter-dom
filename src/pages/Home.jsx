@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 function Home() {
     return (
@@ -58,9 +60,9 @@ function Home() {
                             </div>
                             <button class="btn-slider right"><img src="/icons/Arrow-right.svg" alt="arrow right" /></button>
                         </div>
-                        <a href="/pages/pets/pets.html">
+                        <HashLink to='/Pets#pets'>
                             <button class="btn-rest primary">Get to know the rest</button>
-                        </a>
+                        </HashLink>
                     </div>
                 </div>
             </div>
