@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import Card from './Card';
 
 function Home() {
     return (
@@ -10,19 +10,19 @@ function Home() {
                         <h2 class="start-title">Not only people <br /> need a house</h2>
                         <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or
                             she will love you more than anybody else in the world, you will see!</p>
-                        <a href="#pets">
+                        <HashLink smooth to='#pets'>
                             <button class="btn-start primary">Make a friend</button>
-                        </a>
+                        </HashLink>
                     </div>
-                    <img src="/images/start-screen-puppy.png" alt="puppy" />
+                    <img src="images/start-screen-puppy.png" alt="puppy" />
                 </div>
             </div>
             <div class="about" id="about">
                 <div class="about-main">
                     <div class="about-content">
-                        <img src="/images/about-pets.png" alt="About pets" />
+                        <img src="images/about-pets.png" alt="About pets" />
                         <div class="about-container">
-                            <h3 class="about-title">About the shelter “Cozy House”</h3>
+                            <h3 class="about-title">About the shelter <br /> “Cozy House”</h3>
                             <p>Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of
                                 them will find a family. The others will continue to live with us and will be waiting
                                 for a lucky chance to become dearly loved.</p>
@@ -40,25 +40,13 @@ function Home() {
                     <div class="content">
                         <h3 class="title">Our friends who<br /> are looking for a house</h3>
                         <div class="slider">
-                            <button class="btn-slider left"><img src="/icons/Arrow-left.svg" alt="arrow left" /></button>
+                            <button class="btn-slider left"><img src="icons/Arrow-left.svg" alt="arrow left" /></button>
                             <div class="pets-cards">
-                                <div class="card">
-                                    <img src="/images/pets-katrine.png" alt="Katrine" />
-                                    <p>Katrine</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
-                                <div class="card">
-                                    <img src="/images/pets-jennifer.png" alt="Jennifer" />
-                                    <p>Jennifer</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
-                                <div class="card">
-                                    <img src="/images/pets-woody.png" alt="Woody" />
-                                    <p>Woody</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
+                                <Card name="katrine" page="" />
+                                <Card name="jennifer" page="" />
+                                <Card name="woody" page="" />
                             </div>
-                            <button class="btn-slider right"><img src="/icons/Arrow-right.svg" alt="arrow right" /></button>
+                            <button class="btn-slider right"><img src="icons/Arrow-right.svg" alt="arrow right" /></button>
                         </div>
                         <HashLink to='/Pets#pets'>
                             <button class="btn-rest primary">Get to know the rest</button>
@@ -72,39 +60,39 @@ function Home() {
                         <h3 class="title">How you can help<br /> our shelter</h3>
                         <div class="container">
                             <div class="item">
-                                <img src="/icons/icon-pet-food.svg" alt="food" />
+                                <img src="icons/icon-pet-food.svg" alt="food" />
                                 <p>Pet food</p>
                             </div>
                             <div class="item">
-                                <img src="/icons/icon-transportation.svg" alt="transport" />
+                                <img src="icons/icon-transportation.svg" alt="transport" />
                                 <p>Transportation</p>
                             </div>
                             <div class="item">
-                                <img src="/icons/icon-toys.svg" alt="toys" />
+                                <img src="icons/icon-toys.svg" alt="toys" />
                                 <p>Toys</p>
                             </div>
                             <div class="item">
-                                <img src="/icons/icon-bowls-and-cups.svg" alt="bowl" />
+                                <img src="icons/icon-bowls-and-cups.svg" alt="bowl" />
                                 <p>Bowls and cups</p>
                             </div>
                             <div class="item">
-                                <img src="/icons/icon-shampoos.svg" alt="shampoo" />
+                                <img src="icons/icon-shampoos.svg" alt="shampoo" />
                                 <p>Shampoos</p>
                             </div>
                             <div class="item">
-                                <img src="/icons/icon-vitamins.svg" alt="vitamins" />
+                                <img src="icons/icon-vitamins.svg" alt="vitamins" />
                                 <p>Vitamins</p>
                             </div>
                             <div class="item">
-                                <img src="/icons/icon-medicines.svg" alt="medicines" />
+                                <img src="icons/icon-medicines.svg" alt="medicines" />
                                 <p>Medicines</p>
                             </div>
                             <div class="item">
-                                <img src="/icons/icon-collars-leashes.svg" alt="collar" />
+                                <img src="icons/icon-collars-leashes.svg" alt="collar" />
                                 <p>Collars / leashes</p>
                             </div>
                             <div class="item">
-                                <img src="/icons/icon-sleeping-area.svg" alt="house" />
+                                <img src="icons/icon-sleeping-area.svg" alt="house" />
                                 <p>Sleeping areas</p>
                             </div>
                         </div>
@@ -114,13 +102,13 @@ function Home() {
             <div class="donation">
                 <div class="donation-main">
                     <div class="donation-content">
-                        <img src="/images/donation-dog.png" alt="Donation dog" />
+                        <img src="images/donation-dog.png" alt="Donation dog" height="100%" />
                         <div class="donation-container">
                             <h3 class="donation-title">You can also <br />make a donation</h3>
                             <h5>Name of the bank / Type of bank account</h5>
                             <a href="##">
                                 <div class="bank-card">
-                                    <img src="/icons/credit-card.svg" alt="credit card" />
+                                    <img src="icons/credit-card.svg" alt="credit card" />
                                     <h4>8380 2880 8028 8791 7435</h4>
                                 </div>
                             </a>

@@ -1,56 +1,24 @@
-import './style.css';
+import Card from './Card';
+import '../pets.css';
+
 function Pets() {
     return (
         <>
-            <div class="start-screen">
-
-            </div>
+            <div class="start-screen" />
             <div class="pets" id="pets">
                 <div class="pets-main">
                     <div class="content">
                         <h3 class="title">Our friends who<br /> are looking for a house</h3>
                         <div class="slider">
                             <div class="pets-cards">
-                                <div class="card">
-                                    <img src="./images/pets-katrine.png" alt="Katrine" />
-                                    <p>Katrine</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
-                                <div class="card">
-                                    <img src="./images/pets-jennifer.png" alt="Jennifer" />
-                                    <p>Jennifer</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
-                                <div class="card">
-                                    <img src="./images/pets-woody.png" alt="Woody" />
-                                    <p>Woody</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
-                                <div class="card">
-                                    <img src="./images/pets-sophia.png" alt="Sophia" />
-                                    <p>Sophia</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
-                                <div class="card">
-                                    <img src="./images/pets-timmy.png" alt="Timmy" />
-                                    <p>Timmy</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
-                                <div class="card">
-                                    <img src="./images/pets-charly.png" alt="Charly" />
-                                    <p>Charly</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
-                                <div class="card">
-                                    <img src="./images/pets-scarlett.png" alt="Scarlett" />
-                                    <p>Scarlett</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
-                                <div class="card">
-                                    <img src="./images/pets-freddie.png" alt="Freddie" />
-                                    <p>Freddie</p>
-                                    <button class="learn">Learn more</button>
-                                </div>
+                                <Card name="katrine" page="P" />
+                                <Card name="jennifer" page="P" />
+                                <Card name="woody" page="P" />
+                                <Card name="sophia" page="P" />
+                                <Card name="timmy" page="P" />
+                                <Card name="charly" page="P" />
+                                <Card name="scarlet" page="P" />
+                                <Card name="freddie" page="P" />
                             </div>
                         </div>
                         <div class="paginator">

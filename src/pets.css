@@ -1,79 +1,11 @@
-/* .logo .title {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #545454;
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 35.2px;
-    letter-spacing: 0.06em;
-    margin-bottom: 10px;
-    text-align: center;
+.petsPets {
+    padding: 120px 0;
 }
 
-.header .subtitle {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #292929;
-    font-size: 13px;
-    line-height: 14.95px;
-    letter-spacing: 0.1em;
-    text-align: center;
-}
-
-.list {
-    display: flex;
-    gap: 36px;
-    list-style-type: none;
-}
-
-.link {
-    text-decoration: none;
-}
-
-.select {
-    border-bottom: 3px solid #F1CDB3;
-}
-
-.link {
-    color: #545454;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 24px;
-    display: inline;
-}
-
-.link:hover {
-    color: #292929;
-}
-
-.select {
-    color: #292929;
-}
-
-h2 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 400;
-    font-size: 44px;
-    line-height: 57.2px;
-    color: #FFFFFF;
-}
-
-h3 {
-    font-family: Georgia, serif;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    font-weight: 400;
-    font-size: 35px;
-    color: #545454;
-}
-
-.pets {
-    background-color: #F6F6F6;
-}
-
-.pets-main {
-    padding: 80px 40px 100px 40px;
+/* .pets-main {
     max-width: 1280px;
-    margin: 0 auto;
-}
+    margin: auto;
+} */
 
 .pets .content {
     display: flex;
@@ -198,91 +130,7 @@ button.active {
     color: #292929;
 }
 
-.footer {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 40px 40px 0 40px;
-}
-
-footer .content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 160px;
-}
-
-.contacts,
-.locations {
-    margin-top: 17px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.contacts {
-    gap: 42px;
-    max-width: 279px;
-}
-
-.contacts a {
-    text-decoration: none;
-}
-
-.locations {
-    gap: 35px;
-    max-width: 302px;
-}
-
-.locations h3 {
-    margin-bottom: 2px;
-}
-
-.contacts h3,
-.locations h3 {
-    color: #FFFFFF;
-    line-height: 45.5px;
-}
-
-footer .item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.locations a {
-    text-decoration: none;
-}
-
-footer .item h4 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-    letter-spacing: 0.06em;
-    color: #F1CDB3;
-}
-
-footer .item h4:hover {
-    cursor: pointer;
-}
-
-footer .item img:hover {
-    cursor: pointer;
-}
-
-.hamburger-menu {
-    display: none;
-}
-
-@media only screen and (max-width: 1279px) and (min-width: 768px) {
-
-    .hamburger-menu {
-        display: none;
-    }
-
-    .header {
-        padding: 30px;
-    }
+@media only screen and (max-device-width: 1279px) and (min-device-width: 768px) {
 
     .pets-main {
         padding-top: 80px;
@@ -330,8 +178,8 @@ footer .item img:hover {
     }
 }
 
-@media only screen and (max-width: 767px) and (min-width: 320px) {
-
+@media only screen and (max-device-width: 767px) and (min-device-width: 320px) {
+    /* 
     .hamburger-menu {
         display: block;
     }
@@ -356,7 +204,7 @@ footer .item img:hover {
 
     #toggle:checked~.list {
         right: 0 !important;
-    }
+    } */
 
     .menu {
         position: absolute;
@@ -475,54 +323,4 @@ footer .item img:hover {
         margin: 0 auto;
         gap: 10px;
     }
-
-    .footer {
-        padding: 0;
-        padding-top: 30px;
-    }
-
-    .contacts,
-    .locations {
-        align-items: center;
-    }
-
-    .footer .content {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    footer .content * {
-        margin: 0 auto;
-    }
-
-    .contacts h3 {
-        font-size: 25px;
-        text-align: center;
-        line-height: 32.5px;
-    }
-
-    .locations h3 {
-        margin: 0 30px;
-        font-size: 25px;
-        text-align: center;
-        line-height: 32.5px;
-    }
-
-    .locations {
-        gap: 39px;
-    }
-
-    .locations div {
-        align-self: flex-start;
-    }
-
-    .locations a {
-        margin: 0 auto 0 0;
-    }
-
-    .footer .content img {
-        max-width: 260px;
-        height: auto;
-    }
-} */
+}
