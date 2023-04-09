@@ -33,6 +33,7 @@ header {
 }
 
 .header .container {
+  padding-left: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,6 +65,8 @@ header {
   line-height: 14.95px;
   letter-spacing: 0.1em;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .list {
@@ -87,6 +90,63 @@ header {
 
 .item a:hover {
   color: #FAFAFA;
+}
+
+.mobileMenu {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 320px;
+  height: 100vh;
+}
+
+#toggle {
+  display: none;
+  opacity: 0;
+}
+
+.mobileMenuBtn {
+  display: none;
+  height: 22px;
+  width: 30px;
+  position: fixed;
+  flex-direction: column;
+  justify-content: space-between;
+  visibility: hidden;
+  z-index: 2;
+  transition: all 0.5s ease-out;
+}
+
+.burgeIcon {
+  display: none;
+  background-color: #F1CDB3;
+  height: 2px;
+  width: 100%;
+  z-index: 2;
+}
+
+.mobileMenuContainer {
+  display: none;
+  position: absolute;
+  width: 320px;
+  height: 100vh;
+  background-color: #292929;
+  top: 0px;
+  right: -320px;
+  z-index: 1;
+  transition: all 0.5s ease-out;
+}
+
+.listMobile {
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  list-style: none;
+  line-height: 160%;
+  text-align: center;
+  padding: 0px;
+  padding-top: 158px;
 }
 
 h2 {
@@ -192,6 +252,11 @@ h3 {
   padding: 80px 40px;
 }
 
+/* .pets-main {
+  max-width: 1280px;
+  margin: 0 auto;
+} */
+
 .pets-main .content {
   display: flex;
   flex-direction: column;
@@ -209,7 +274,9 @@ h3 {
 .pets-cards {
   display: flex;
   flex-direction: row;
-  gap: 90px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px 30px;
 }
 
 .card {
@@ -276,6 +343,58 @@ h3 {
   border: 2px solid #FDDCC4;
   background-color: #FDDCC4;
 }
+
+/*==========Page Pets==========*/
+
+.paginator {
+  display: flex;
+  gap: 20px;
+}
+
+.paginator button {
+  background-color: transparent;
+  border: 2px solid #F1CDB3;
+  width: 52px;
+  height: 52px;
+  border-radius: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.paginator button:hover {
+  cursor: pointer;
+  border: 2px solid #FDDCC4;
+  background-color: #FDDCC4;
+}
+
+button.active {
+  background-color: #F1CDB3;
+  border: none;
+}
+
+button.active:hover {
+  cursor: default;
+  background-color: #F1CDB3;
+  border: none;
+}
+
+button.inactive {
+  color: #CDCDCD;
+  border-color: #CDCDCD;
+}
+
+button.inactive:hover {
+  background-color: transparent;
+  cursor: default;
+  border-color: #CDCDCD;
+}
+
+button.active {
+  color: #292929;
+}
+
+/*==========Page Pets==========*/
 
 .help {
   background-color: #FFFFFF;
@@ -509,7 +628,7 @@ footer .item img:hover {
   .about-content {
     flex-direction: column-reverse;
     align-items: center;
-    padding: 120px 0 60px;
+    padding: 120px auto 60px auto;
     gap: 90px;
   }
 
@@ -518,7 +637,11 @@ footer .item img:hover {
     height: auto;
   }
 
-  .card:nth-child(3) {
+  #PetsPage:nth-last-child(-n+2) {
+    display: none;
+  }
+
+  #HomePage:nth-last-child(-n+1) {
     display: none;
   }
 
@@ -534,13 +657,14 @@ footer .item img:hover {
   .pets-cards {
     flex-wrap: wrap;
     gap: 30px;
+    width: 580px;
   }
 
   .slider {
     gap: 12px;
   }
 
-  .help .container {
+  */ .help .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 60px;
@@ -589,91 +713,64 @@ footer .item img:hover {
 }
 
 @media only screen and (max-device-width: 767px) and (min-device-width: 320px) {
-  /* .hamburger-menu {
-    display: block;
+  .list {
+    display: none;
   }
 
   #toggle {
-    opacity: 0;
+    display: block;
   }
 
-  #toggle:checked+.menu span {
-    transform: rotate(45deg);
+  .mobileMenuContainer {
+    display: block;
   }
 
-  #toggle:checked+.menu span::before {
-    top: 0;
-    transform: rotate(0deg);
+  .burgeIcon {
+    display: block;
+    z-index: 3;
   }
 
-  #toggle:checked+.menu span::after {
-    top: 0;
+  .mobileMenuBtn {
+    display: block;
+    visibility: visible;
+    margin-right: 41px;
+    display: flex;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mobileMenu {
+    display: contents;
+  }
+
+  .mobileMenuBtn:hover {
+    z-index: 3;
+    position: relative;
+  }
+
+  #toggle:checked~label>.mobileMenuBtn {
     transform: rotate(90deg);
   }
 
-  #toggle:checked~.list {
-    right: 0 !important;
-  } */
-
-  /* .menu {
-    position: absolute;
-    left: 90%;
-    top: 59px;
-    width: 30px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 1;
+  #toggle:checked~.mobileMenu>.mobileMenuContainer {
+    right: 0px;
   }
 
-  .menu span,
-  .menu span::before,
-  .menu span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #f1cdb3;
-    transition-duration: .20s;
-  }
 
-  .menu span::before {
-    content: '';
-    top: -10px;
-  }
 
-  .menu span::after {
-    content: '';
-    top: 10px;
-  } */
-
-  /* .list {
-    right: -100%;
-  } */
-
-  .list {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 320px;
-    height: 100%;
-    margin: 0;
-    padding: 248px 0;
-    list-style: none;
-    background-color: #ECEFF1;
-    transition-duration: .25s;
-  }
-
-  .list.item {
+  .itemMobile {
     display: block;
     padding: 12px 24px;
     transition-duration: .25s;
   }
 
-  .list.item a {
-    font-size: 32px;
+  .itemMobile a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #CDCDCD;
+    font-weight: 400;
+    line-height: 24px;
+    display: inline;
   }
 
   .select {
@@ -685,7 +782,7 @@ footer .item img:hover {
   }
 
   .header {
-    padding: 30px 0 0 10px;
+    padding: 30px 0 0 0;
   }
 
   .start .content {
@@ -770,11 +867,11 @@ footer .item img:hover {
     height: auto;
   }
 
-  .card:nth-child(2) {
+  #HomePage:nth-last-child(-n+2) {
     display: none;
   }
 
-  .card:nth-child(3) {
+  #PetsPage:nth-last-child(-n+5) {
     display: none;
   }
 

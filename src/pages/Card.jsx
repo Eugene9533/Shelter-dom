@@ -1,19 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
 
-function cap(str) {
-    return str.replace(/(^|\s)\S/g, function (a) { return a.toUpperCase() })
-}
+const PetsCollection = [
+    { petName: "Katrine", url: "../images/pets-katrine.png" },
+    { petName: "Jennifer", url: "../images/pets-jennifer.png" },
+    { petName: "Woody", url: "../images/pets-woody.png" },
+    { petName: "Sophia", url: "../images/pets-sophia.png" },
+    { petName: "Timmy", url: "../images/pets-timmy.png" },
+    { petName: "Charly", url: "../images/pets-charly.png" },
+    { petName: "Scarlet", url: "../images/pets-scarlet.png" },
+    { petName: "Freddie", url: "../images/pets-freddie.png" },
+];
 
-export default class Card extends Component {
+class Card extends React.Component {
+
     render() {
         return (
             <>
-                <div class={`card${this.props.page}`}>
-                    <img src={`images/pets-${this.props.name}.png`} alt={`${this.props.name}`} />
-                    <p>{cap(this.props.name)}</p>
-                    <button class={`learn${this.props.page}`}>Learn more</button>
+                <div class="card" id={`${this.props.idpage}`}>
+                    <img src={`${PetsCollection[this.props.idCard].url}`} alt={`${PetsCollection[this.props.idCard].petName}`} />
+                    <p>{`${PetsCollection[this.props.idCard].petName}`}</p>
+                    <button class="learn">Learn more</button>
                 </div>
             </>
         );
     }
 };
+export default Card;

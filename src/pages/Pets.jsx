@@ -1,38 +1,72 @@
+import React, { useState, useEffect } from "react";
 import Card from './Card';
 import '../pets.css';
 
-function Pets() {
-    return (
-        <>
-            <div class="start-screen" />
-            <div class="pets" id="pets">
-                <div class="pets-main">
-                    <div class="content">
-                        <h3 class="title">Our friends who<br /> are looking for a house</h3>
-                        <div class="slider">
-                            <div class="pets-cards">
-                                <Card name="katrine" page="P" />
-                                <Card name="jennifer" page="P" />
-                                <Card name="woody" page="P" />
-                                <Card name="sophia" page="P" />
-                                <Card name="timmy" page="P" />
-                                <Card name="charly" page="P" />
-                                <Card name="scarlet" page="P" />
-                                <Card name="freddie" page="P" />
+let num = [0, 1, 2, 3, 4, 5, 6, 7];
+
+class Pets extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            numCard: num,
+        };
+    }
+
+    prevPets = () => {
+        num = num.map(item => {
+            let i = item + 1;
+            if (i > 7) i = 0;
+            return i;
+        });
+
+        this.setState({
+            numCard: num,
+        })
+    }
+    nextPets = () => {
+        num = num.map(item => {
+            let i = item - 1;
+            if (i < 0) i = 7;
+            return i;
+        });
+
+        this.setState({
+            numCard: num,
+        })
+    }
+
+    render() {
+        return (
+            <>
+                <div class="start-screen" />
+                <div class="pets" id="pets">
+                    <div class="pets-main">
+                        <div class="content">
+                            <h3 class="title">Our friends who<br /> are looking for a house</h3>
+                            <div class="slider">
+                                <div class="pets-cards">
+                                    <Card idpage="PetsPage" idCard={this.state.numCard[0]} />
+                                    <Card idpage="PetsPage" idCard={this.state.numCard[1]} />
+                                    <Card idpage="PetsPage" idCard={this.state.numCard[2]} />
+                                    <Card idpage="PetsPage" idCard={this.state.numCard[3]} />
+                                    <Card idpage="PetsPage" idCard={this.state.numCard[4]} />
+                                    <Card idpage="PetsPage" idCard={this.state.numCard[5]} />
+                                    <Card idpage="PetsPage" idCard={this.state.numCard[6]} />
+                                    <Card idpage="PetsPage" idCard={this.state.numCard[7]} />
+                                </div>
                             </div>
-                        </div>
-                        <div class="paginator">
-                            <button class="inactive"></button>
-                            <button class="inactive"></button>
-                            <button class="active">1</button>
-                            <button></button>
-                            <button></button>
+                            <div class="paginator">
+                                <button class={this.props.width} >&lt;&lt;</button>
+                                <button class={this.props.width} disabled={this.props.active} onClick={this.prevPets}>&lt;</button>
+                                <button class={this.props.width}>1</button>
+                                <button class={this.props.width} disabled={this.props.active} onClick={this.nextPets}>&gt;</button>
+                                <button class={this.props.width}>&gt;&gt;</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
-    )
-};
-
+            </>
+        )
+    }
+}
 export default Pets;
