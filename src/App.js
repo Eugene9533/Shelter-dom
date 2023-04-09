@@ -48,7 +48,7 @@ function App() {
                                 </li>
                             </ul>
                         </nav>
-                        <input type="checkbox" id="toggle" />
+                        {/* <input type="checkbox" id="toggle" />
                         <label for="toggle">
                             <div class="mobileMenuBtn">
                                 <div class="burgeIcon"></div>
@@ -73,7 +73,7 @@ function App() {
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </header>
