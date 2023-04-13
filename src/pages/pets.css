@@ -1,0 +1,47 @@
+.paginator {
+    display: flex;
+    gap: 20px;
+}
+
+.paginator button {
+    background-color: transparent;
+    border: 2px solid #F1CDB3;
+    width: 52px;
+    height: 52px;
+    border-radius: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.paginator button:hover {
+    cursor: pointer;
+    border: 2px solid #FDDCC4;
+    background-color: #FDDCC4;
+}
+
+button.active {
+    background-color: #F1CDB3;
+    border: none;
+}
+
+button.active:hover {
+    cursor: default;
+    background-color: #F1CDB3;
+    border: none;
+}
+
+button.inactive {
+    color: #CDCDCD;
+    border-color: #CDCDCD;
+}
+
+button.inactive:hover {
+    background-color: transparent;
+    cursor: default;
+    border-color: #CDCDCD;
+}
+
+button.active {
+    color: #292929;
+}

@@ -2,10 +2,10 @@ import { Routes, Route, Link, NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Home from './pages/Home';
 import Pets from './pages/Pets';
-import Notfound from './pages/Notfound';
 import { useState, useEffect } from 'react';
 
 function App() {
+
     const [windowSize, setWindowSize] = useState([window.innerWidth]);
     useEffect(() => {
         const handleWindowResize = () => {
@@ -48,32 +48,6 @@ function App() {
                                 </li>
                             </ul>
                         </nav>
-                        {/* <input type="checkbox" id="toggle" />
-                        <label for="toggle">
-                            <div class="mobileMenuBtn">
-                                <div class="burgeIcon"></div>
-                                <div class="burgeIcon"></div>
-                                <div class="burgeIcon"></div>
-                            </div>
-                        </label>
-                        <div class="mobileMenu">
-                            <div class="mobileMenuContainer">
-                                <ul class="listMobile">
-                                    <li class="itemMobile">
-                                        <NavLink to='Home'><HashLink smooth to='Home#about'>About the shelter</HashLink></NavLink>
-                                    </li>
-                                    <li class="itemMobile">
-                                        <NavLink to='Pets'>Our pets</NavLink>
-                                    </li>
-                                    <li class="itemMobile">
-                                        <HashLink smooth to='Home#help'>Help the shelter</HashLink>
-                                    </li>
-                                    <li class="itemMobile">
-                                        <HashLink smooth to="Home#contacts">Contacts</HashLink>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </header>

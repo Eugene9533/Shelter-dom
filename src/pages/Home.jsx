@@ -13,8 +13,8 @@ class Home extends React.Component {
 
     prevPets = () => {
         num = num.map(item => {
-            let i = item + 1;
-            if (i > 7) i = 0;
+            let i = item - 1;
+            if (i < 0) i = 7;
             return i;
         });
 
@@ -24,14 +24,19 @@ class Home extends React.Component {
     }
     nextPets = () => {
         num = num.map(item => {
-            let i = item - 1;
-            if (i < 0) i = 7;
+            let i = item + 1;
+            if (i > 7) i = 0;
+
             return i;
         });
 
         this.setState({
             numCard: num,
         })
+    }
+
+    newCard(i) {
+        return <Card idpage="PetsPage" idCard={this.state.numCard[i]} />
     }
 
     render() {
@@ -153,8 +158,8 @@ class Home extends React.Component {
                     </div>
                 </div>
             </>
-        )
+        );
     }
-};
+}
 
 export default Home;

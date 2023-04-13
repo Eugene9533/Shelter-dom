@@ -1,29 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Card from './Card';
-import '../pets.css';
+import './pets.css';
 
 let num = [0, 1, 2, 3, 4, 5, 6, 7];
+
 
 class Pets extends React.Component {
     constructor() {
         super();
         this.state = {
             numCard: num,
-        };
+            x: num,
+        }
     }
 
     prevPets = () => {
-        num = num.map(item => {
-            let i = item + 1;
-            if (i > 7) i = 0;
-            return i;
-        });
-
-        this.setState({
-            numCard: num,
-        })
-    }
-    nextPets = () => {
         num = num.map(item => {
             let i = item - 1;
             if (i < 0) i = 7;
@@ -32,10 +23,23 @@ class Pets extends React.Component {
 
         this.setState({
             numCard: num,
-        })
+        });
+    }
+    nextPets = () => {
+        num = num.map(item => {
+            let i = item + 1;
+            if (i > 7) i = 0;
+
+            return i;
+        });
+
+        this.setState({
+            numCard: num,
+        });
     }
 
     render() {
+
         return (
             <>
                 <div class="start-screen" />
@@ -45,14 +49,9 @@ class Pets extends React.Component {
                             <h3 class="title">Our friends who<br /> are looking for a house</h3>
                             <div class="slider">
                                 <div class="pets-cards">
-                                    <Card idpage="PetsPage" idCard={this.state.numCard[0]} />
-                                    <Card idpage="PetsPage" idCard={this.state.numCard[1]} />
-                                    <Card idpage="PetsPage" idCard={this.state.numCard[2]} />
-                                    <Card idpage="PetsPage" idCard={this.state.numCard[3]} />
-                                    <Card idpage="PetsPage" idCard={this.state.numCard[4]} />
-                                    <Card idpage="PetsPage" idCard={this.state.numCard[5]} />
-                                    <Card idpage="PetsPage" idCard={this.state.numCard[6]} />
-                                    <Card idpage="PetsPage" idCard={this.state.numCard[7]} />
+                                    {this.state.x.map(i => (
+                                        <Card idpage="PetsPage" idCard={this.state.numCard[i]} />
+                                    ))}
                                 </div>
                             </div>
                             <div class="paginator">
