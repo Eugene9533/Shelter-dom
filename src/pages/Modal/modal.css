@@ -60,6 +60,7 @@
     margin-top: 50px;
     margin-left: 29px;
     padding: 0;
+    font-size: 14px;
 }
 
 .name h3 {
@@ -103,6 +104,48 @@
     color: #F1CDB3;
 }
 
-.info {
-    font-size: 14px;
+@media only screen and (max-device-width: 767px) and (min-device-width: 320px) {
+
+    .close {
+        left: 120px;
+    }
+
+    .modalContent {
+        width: 240px;
+        height: 400px;
+    }
+
+    .modalContent img {
+        display: none;
+    }
+
+    .breed {
+        display: flex;
+        justify-content: center;
+    }
+
+    .info {
+        margin: 10px;
+    }
+
+    .breed {
+        display: flex;
+        justify-content: center;
+    }
+
+    .description {
+        margin-top: 20px;
+        letter-spacing: 0px;
+    }
+
+    .points {
+        margin-top: 24px;
+    }
+
+    .info .age p,
+    .info .inoculations p,
+    .info .diseases p,
+    .info .parasites p {
+        line-height: 20px;
+    }
 }

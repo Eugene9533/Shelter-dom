@@ -11,7 +11,7 @@ const ModalW = ({ active, setActive, idCard }) => {
                     <img src={PetsList[idCard].img} alt={PetsList[idCard].name} />
                     <div className="info">
                         <div className="name"><h3>{PetsList[idCard].name}</h3></div>
-                        <div className="breed"><h4>{PetsList[idCard].breed}</h4></div>
+                        <div className="breed"><h4>{PetsList[idCard].type + " - " + PetsList[idCard].breed}</h4></div>
                         <div className="description">{PetsList[idCard].description}</div>
                         <ul class="points">
                             <li class="age"><p>Age: </p>{PetsList[idCard].age}</li>
