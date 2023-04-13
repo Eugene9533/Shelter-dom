@@ -16,11 +16,22 @@
   padding: 0;
 }
 
+.scroll {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
 body {
   font-family: Arial, sans-serif;
   font-weight: 400;
   min-height: 100vh;
 
+}
+
+.burger-menu,
+.list-menu {
+  display: none;
 }
 
 header {
@@ -489,7 +500,12 @@ footer .item img:hover {
   cursor: pointer;
 }
 
-@media only screen and (max-device-width: 1279px) and (min-device-width: 768px) {
+@media only screen and (max-width: 1279px) and (min-width: 768px) {
+
+  .burger-menu,
+  .list-menu {
+    display: none;
+  }
 
   .header {
     padding: 30px 30px 0 30px;
@@ -615,7 +631,75 @@ footer .item img:hover {
   }
 }
 
-@media only screen and (max-device-width: 767px) and (min-device-width: 320px) {
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+
+  .burger-menu {
+    cursor: pointer;
+    display: flex;
+    width: 50px;
+    height: 40px;
+    margin-right: 37px;
+    transition: 0.4s;
+    z-index: 3;
+  }
+
+  .bactive {
+    transform: rotate(90deg);
+    transition: 0.4s;
+  }
+
+  .burger-button {
+    width: 50px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .burger-button span {
+    width: 50px;
+    border: 2px solid #F1CDB3;
+  }
+
+  .logo {
+    z-index: 3;
+  }
+
+  .list-menu ul .item {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+  }
+
+  .list-menu {
+    display: flex;
+    position: fixed;
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding-top: 135px;
+    z-index: 2;
+    background: #292929;
+    transition: 0.4s;
+    right: -767px;
+    overflow: hidden;
+  }
+
+  .list-menu .item a {
+    display: flex;
+    font-family: Arial;
+    font-size: 32px;
+    line-height: 30px;
+    margin-top: 45px;
+    justify-content: center;
+  }
+
+  .menu-active {
+    right: 0px;
+    transition: 0.4s;
+  }
+
   .list {
     display: none;
   }
@@ -629,7 +713,7 @@ footer .item img:hover {
   }
 
   .header {
-    padding: 30px 0 0 0;
+    padding: 30px 0 0 10px;
   }
 
   .start .content {

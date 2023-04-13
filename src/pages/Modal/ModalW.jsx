@@ -3,7 +3,6 @@ import "./modal.css"
 import PetsList from "../../pets-list.json";
 
 const ModalW = ({ active, setActive, idCard }) => {
-    console.log(PetsList[2].inoculations.join(" "))
     return (
         <>
             <div class={active ? "modal mactive" : "modal"} >

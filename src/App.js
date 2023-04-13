@@ -2,11 +2,12 @@ import { Routes, Route, Link, NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Home from './pages/Home';
 import Pets from './pages/Pets';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function App() {
-
+const App = () => {
+    const [modalActive, setModalActive] = React.useState(false);
     const [windowSize, setWindowSize] = useState([window.innerWidth]);
+
     useEffect(() => {
         const handleWindowResize = () => {
             setWindowSize([window.innerWidth]);
@@ -20,6 +21,11 @@ function App() {
     let w = "";
     let d = "active"
     windowSize[0] > 1279 ? w = "inactive" : w = "active";
+
+    function checkBurgerMenu() {
+        modalActive ? setModalActive(false) : setModalActive(true);
+        modalActive ? document.querySelector("body").classList.remove("scroll") : document.querySelector("body").classList.add("scroll");
+    };
 
     return (
         <>
@@ -48,13 +54,37 @@ function App() {
                                 </li>
                             </ul>
                         </nav>
+                        <div className={modalActive ? "burger-menu bactive" : "burger-menu"} onClick={checkBurgerMenu}>
+                            <div className="burger-button">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </header>
+            <div className={modalActive ? "list-menu menu-active" : "list-menu"}>
+                <ul>
+                    <li class="item">
+                        <NavLink to='Home'><HashLink smooth to='Home#about' onClick={checkBurgerMenu}>About the shelter</HashLink></NavLink>
+                    </li>
+                    <li class="item">
+                        <NavLink to='Pets' onClick={checkBurgerMenu}>Our pets</NavLink>
+                    </li>
+                    <li class="item">
+                        <HashLink smooth to='Home#help' onClick={checkBurgerMenu}>Help the shelter</HashLink>
+                    </li>
+                    <li class="item">
+                        <HashLink smooth to="Home#contacts" onClick={checkBurgerMenu}>Contacts</HashLink>
+                    </li>
+                </ul>
+            </div>
             <main class="main">
                 <Routes>
                     <Route path='Home' element={<Home />} />
-                    <Route path='Pets' element={<Pets width={w} active={w !== d} />} />
+                    <Route path='Pets' element={<Pets width={w}/* active={w !== d}*/ />} />
                     <Route path='*' element={<Home />} />
                 </Routes>
             </main>
