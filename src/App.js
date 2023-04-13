@@ -84,7 +84,7 @@ const App = () => {
             <main class="main">
                 <Routes>
                     <Route path='Home' element={<Home />} />
-                    <Route path='Pets' element={<Pets width={w}/* active={w !== d}*/ />} />
+                    <Route path='Pets' element={<Pets width={w} active={w !== d} />} />
                     <Route path='*' element={<Home />} />
                 </Routes>
             </main>
