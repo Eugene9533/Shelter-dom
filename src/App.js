@@ -10,17 +10,13 @@ const App = () => {
 
     useEffect(() => {
         const handleWindowResize = () => {
-            setWindowSize([window.innerWidth]);
+            setWindowSize(window.innerWidth);
         };
         window.addEventListener('resize', handleWindowResize);
         return () => {
             window.removeEventListener('resize', handleWindowResize);
         };
     });
-
-    let w = "";
-    let d = "active"
-    windowSize[0] > 1279 ? w = "inactive" : w = "active";
 
     function checkBurgerMenu() {
         modalActive ? setModalActive(false) : setModalActive(true);
@@ -84,7 +80,7 @@ const App = () => {
             <main class="main">
                 <Routes>
                     <Route path='Home' element={<Home />} />
-                    <Route path='Pets' element={<Pets width={w} active={w !== d} />} />
+                    <Route path='Pets' element={<Pets width={windowSize} />} />
                     <Route path='*' element={<Home />} />
                 </Routes>
             </main>

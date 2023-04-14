@@ -3,7 +3,7 @@ import Card from './Card';
 import './pets.css';
 
 let num = [0, 1, 2, 3, 4, 5, 6, 7];
-
+let pag = document.querySelector('.pag');
 class Pets extends React.Component {
     constructor() {
         super();
@@ -24,6 +24,7 @@ class Pets extends React.Component {
             numCard: num,
         });
     }
+
     nextPets = () => {
         num = num.map(item => {
             let i = item + 1;
@@ -35,6 +36,10 @@ class Pets extends React.Component {
         this.setState({
             numCard: num,
         });
+    }
+
+    paginator = () => {
+        return this.props.width > 1279 ? "pag inactive" : "pag";
     }
 
     render() {
@@ -54,11 +59,11 @@ class Pets extends React.Component {
                                 </div>
                             </div>
                             <div class="paginator">
-                                <button class={this.props.width} >&lt;&lt;</button>
-                                <button class={this.props.width} disabled={this.props.active} onClick={this.prevPets}>&lt;</button>
+                                <button class={this.paginator()} >&lt;&lt;</button>
+                                <button class={this.paginator()} onClick={this.prevPets}>&lt;</button>
                                 <button class={this.props.width}>1</button>
-                                <button class={this.props.width} disabled={this.props.active} onClick={this.nextPets}>&gt;</button>
-                                <button class={this.props.width}>&gt;&gt;</button>
+                                <button class={this.paginator()} onClick={this.nextPets}>&gt;</button>
+                                <button class={this.paginator()} >&gt;&gt;</button>
                             </div>
                         </div>
                     </div>
